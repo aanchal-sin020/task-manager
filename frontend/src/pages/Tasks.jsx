@@ -15,7 +15,7 @@ function Tasks() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://task-manager-production-4c0a.up.railway.app/api/tasks", {
+      const res = await fetch("https://task-manager-production-4c0a.up.railway.app/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,7 @@ function Tasks() {
   const deleteTask = async (id) => {
     const token = localStorage.getItem("token");
 
-    await fetch(`http://task-manager-production-4c0a.up.railway.app/api/tasks/${id}`, {
+    await fetch(`https://task-manager-production-4c0a.up.railway.app/api/tasks/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -58,7 +58,7 @@ function Tasks() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`http://task-manager-production-4c0a.up.railway.app/api/tasks/${id}`, {
+      const res = await fetch(`https://task-manager-production-4c0a.up.railway.app/api/tasks/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,7 @@ function Tasks() {
         return;
       }
 
-      const res = await fetch("http://task-manager-production-4c0a.up.railway.app/api/tasks", {
+      const res = await fetch("https://task-manager-production-4c0a.up.railway.app/api/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
