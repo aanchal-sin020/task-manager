@@ -9,12 +9,7 @@ const healthRoute = require("./routes/health");
 const app = express();
 
 /* ---------- Middleware ---------- */
-app.use(cors({
-  origin: "*", // 👈 TEMPORARY: allow all origins
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-}));
-
+app.use(cors()); // ✅ allow ALL origins (safe for demo project)
 app.use(express.json());
 
 /* ---------- DB ---------- */
