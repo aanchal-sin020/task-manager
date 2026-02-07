@@ -8,26 +8,23 @@ const healthRoute = require("./routes/health");
 
 const app = express();
 
-/* ---------- Middleware ---------- */
-app.use(cors()); // ✅ allow ALL origins (safe for demo project)
+/* Middleware */
+app.use(cors());
 app.use(express.json());
 
-/* ---------- DB ---------- */
+/* DB */
 connectDB();
 
-/* ---------- Routes ---------- */
+/* Routes */
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api", healthRoute);
 
-/* ---------- Test ---------- */
 app.get("/", (req, res) => {
   res.send("API running 🚀");
 });
 
-/* ---------- Server ---------- */
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
-});
+app.listen(PORT, () => console.log("Server running on port " + PORT));
+
 
